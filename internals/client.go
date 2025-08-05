@@ -52,12 +52,11 @@ func ConnectClient(host string) {
 			}
 
 			fmt.Println(message)
+			fmt.Printf("[%s]$: ", username)
 		}
 	}()
 
 	for {
-		fmt.Printf("[%s]$: ", username)
-
 		if scanner.Scan() {
 			input := scanner.Text()
 
