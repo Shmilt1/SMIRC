@@ -45,12 +45,14 @@ func ConnectClient(host string) {
 	fmt.Print(joined)
 
 	go func() {
-		message, err := reader.ReadString('\n')
-		if err != nil {
-			log.Fatalln(err)
-		}
+		for {
+			message, err := reader.ReadString('\n')
+			if err != nil {
+				log.Fatalln(err)
+			}
 
-		fmt.Println(message)
+			fmt.Println(message)
+		}
 	}()
 
 	for {

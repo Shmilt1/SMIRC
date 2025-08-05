@@ -38,6 +38,7 @@ func handleClient(conn net.Conn) {
 			log.Printf("%s closed", conn.RemoteAddr().String())
 			break
 		}
+		message = strings.TrimSpace(message)
 
 		for i, c := range connections {
 			if c != conn {
